@@ -2,8 +2,8 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 
-include $_SERVER['DOCUMENT_ROOT'] . '/mediashare/src/includes/db.inc.php';
-include $_SERVER['DOCUMENT_ROOT'] . '/mediashare/src/includes/helpers.inc.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/db.inc.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/helpers.inc.php';
 
 
 $restJson = file_get_contents("php://input");
@@ -32,7 +32,7 @@ try {
 catch (PDOException $e)
 {
   $error = 'Error adding user img.';
-  include $_SERVER['DOCUMENT_ROOT'] . '/mediashare/src/includes/error.html.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/error.html.php';
   exit();
 }
 

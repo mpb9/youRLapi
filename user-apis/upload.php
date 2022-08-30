@@ -5,7 +5,7 @@ header("Access-Control-Allow-Methods: PUT, GET, POST");
 
 $response = array();
 $upload_dir = 'images/';
-$server_url = 'https://localhost/mediashare/src';
+$server_url = 'https://localhost/youRLapi';
 
 if($_FILES['file']) {
     $count = count($_FILES['file']['name']);

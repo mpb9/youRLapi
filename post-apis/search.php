@@ -22,7 +22,7 @@ $search = $_POST['query'];
 */
 
 function pop_search_result($name, $search, $incUser, $incTitle, $incSource, $incCaption){
-  include $_SERVER['DOCUMENT_ROOT'] . '/mediashare/src/includes/db.inc.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/db.inc.php';
 
   if($incUser) $user = true;
   else $user = false;
@@ -49,7 +49,7 @@ function pop_search_result($name, $search, $incUser, $incTitle, $incSource, $inc
 
   }catch(PDOException $e) {
       $error = ($e->getMessage());
-      include $_SERVER['DOCUMENT_ROOT'] . '/mediashare/src/includes/error.html.php';
+      include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/error.html.php';
       exit();
     
   }
@@ -93,7 +93,7 @@ function pop_search_result($name, $search, $incUser, $incTitle, $incSource, $inc
 }
 
 function friend_search_result($name, $search, $incUser, $incTitle, $incSource, $incCaption){
-  include $_SERVER['DOCUMENT_ROOT'] . '/mediashare/src/includes/db.inc.php';
+  include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/db.inc.php';
 
   try {
     $sql = "SELECT * FROM media 
@@ -115,7 +115,7 @@ function friend_search_result($name, $search, $incUser, $incTitle, $incSource, $
 
   }catch(PDOException $e) {
       $error = ($e->getMessage());
-      include $_SERVER['DOCUMENT_ROOT'] . '/mediashare/src/includes/error.html.php';
+      include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/error.html.php';
       exit();
     
   }

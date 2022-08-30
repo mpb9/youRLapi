@@ -3,8 +3,8 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 
-include $_SERVER['DOCUMENT_ROOT'] . '/mediashare/src/includes/db.inc.php';
-include $_SERVER['DOCUMENT_ROOT'] . '/mediashare/src/includes/helpers.inc.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/db.inc.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/helpers.inc.php';
 
 $restJson = file_get_contents("php://input");
 $_POST = json_decode($restJson, true);
@@ -27,7 +27,7 @@ if($relationship === 'unfollow'){
     $s->execute();
   } catch (PDOException $e) {
     $error = 'Error unfollowing user';
-    include $_SERVER['DOCUMENT_ROOT'] . '/mediashare/src/includes/error.html.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/error.html.php';
     exit();
   }
   echo json_encode('follow');
@@ -43,7 +43,7 @@ if($relationship === 'unfollow'){
     $s->execute();
   } catch (PDOException $e) {
     $error = 'Error following user';
-    include $_SERVER['DOCUMENT_ROOT'] . '/mediashare/src/includes/error.html.php';
+    include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/error.html.php';
     exit();
   }
 
