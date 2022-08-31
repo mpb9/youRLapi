@@ -5,7 +5,7 @@ header("Access-Control-Allow-Methods: PUT, GET, POST");
 
 $response = array();
 $upload_dir = 'images/';
-$server_url = 'https://localhost/youRLapi';
+$server_url = 'https://you-rl.000webhostapp.com/youRLapi';
 
 if($_FILES['file']) {
     $count = count($_FILES['file']['name']);
@@ -44,11 +44,12 @@ if($_FILES['file']) {
                     "base64" => $base64URL,
                     "total" => $count
                 ));
-
+                console.log("upload success");
+                console.log($server_url."/".$upload_name);
                 echo json_encode($upload_name);
             }else {
-                
-                
+                console.log("upload failed");
+                console.log($server_url."/".$upload_name);
 
                 array_push($response,array(
                     "status" => "danger",
@@ -56,6 +57,7 @@ if($_FILES['file']) {
                     "url" =>  $file_name,
                     "message" => "Error uploading the file!"
                 ));
+                
             }
         }
     }

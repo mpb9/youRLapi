@@ -31,7 +31,7 @@ try {
 }
 catch (PDOException $e)
 {
-  $error = 'Error adding user img.';
+  $error = 'Error adding user info.';
   include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/error.html.php';
   exit();
 }
