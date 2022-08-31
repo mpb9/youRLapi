@@ -28,8 +28,7 @@ try
 catch (PDOException $e)
 {
   $error = 'Error finding user info';
-  include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/error.html.php';
-  exit();
+  echo $error;
 }
 
 $num = 0;
@@ -58,9 +57,8 @@ else {
     $s->bindValue(':name', $name);
     $s->execute();
   } catch (PDOException $e) {
-    $error = 'Error finding user info';
-    include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/error.html.php';
-    exit();
+    echo 'Error finding user info';
+    
   }
 
   while(($row = $s->fetch(PDO::FETCH_ASSOC)) != false){
@@ -72,7 +70,7 @@ else {
       'img' => 'https://image.freepik.com/free-vector/funny-detective-character-illustration_152098-230.jpg',
       'caption' => 'This user has yet to share anything!',
       'bio' => '',
-      'proimg' => ''
+      'proimg' => 'https://i.pinimg.com/originals/91/2c/e1/912ce19bfeadb1e9e2b7cee8f0a4f1bc.jpg'  //MAKE THIS THE DEFAULT
     );
   }
 

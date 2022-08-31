@@ -22,6 +22,17 @@ if($_FILES['file']) {
                 "message" => "Error uploading the file!",
                 "number" => $i
             ));
+            $upload_error = array(
+                "response" => $response,
+                "server_url" => $server_url,
+                "file_name" =>  $file_name,
+                "file_tmp_name" => $file_tmp_name,
+                "number" => $i,
+                "count" => $count,
+                "error" => $error,
+                "why" => "error uploading file"
+            );
+            echo json_encode($upload_error);
         }else{
 
             $random_name = rand(1000,1000000)."-".$file_name;
@@ -44,12 +55,8 @@ if($_FILES['file']) {
                     "base64" => $base64URL,
                     "total" => $count
                 ));
-                console.log("upload success");
-                console.log($server_url."/".$upload_name);
-                echo json_encode($upload_name);
+                echo json_encode('success ' .$upload_name);
             }else {
-                console.log("upload failed");
-                console.log($server_url."/".$upload_name);
 
                 array_push($response,array(
                     "status" => "danger",
@@ -57,7 +64,14 @@ if($_FILES['file']) {
                     "url" =>  $file_name,
                     "message" => "Error uploading the file!"
                 ));
-                
+
+                $upload_error = array(
+                    "uploadname" => $upload_name,
+                    "server_url" => $server_url,
+                    "url" =>  $file_name,
+                    "why" => "cant move file"
+                );
+                echo json_encode($upload_error);
             }
         }
     }
@@ -66,8 +80,11 @@ if($_FILES['file']) {
     $response = array(
         "status" => "error",
         "error" => true,
-        "message" => print_r($_FILES['file'])
+        "message" => print_r($_FILES['file']),
+        "why" => 'no file'
     );
+    echo json_encode($response);
+
 }
 
 

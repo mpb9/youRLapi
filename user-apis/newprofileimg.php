@@ -29,6 +29,5 @@ catch (PDOException $e)
   include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/error.html.php';
   exit();
 }
-console.log($imgpath);
 
 echo json_encode('done');
