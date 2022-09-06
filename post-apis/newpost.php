@@ -35,7 +35,6 @@ $url = $_POST['url'];
 $img = $_POST['image'];
 $caption = $_POST['description'];
 
-date_default_timezone_set("America/New_York");
 $day = date("Y-m-d");
 
 try {
