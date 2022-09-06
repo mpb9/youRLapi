@@ -33,7 +33,7 @@ catch (PDOException $e)
 
 $row = $s->fetch();
 
-if ($row[0] > 0){
+if ($row[0] > 0 || $name === 'anonymous'){
     echo ('Taken');
 
 } else {
