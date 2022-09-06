@@ -69,7 +69,7 @@ else {
       'url' => 'https://thelife.com/19-ways-to-encourage-others',
       'img' => 'https://image.freepik.com/free-vector/funny-detective-character-illustration_152098-230.jpg',
       'caption' => 'This user has yet to share anything!',
-      'bio' => 'Move along please and thank you!',
+      'bio' => '',
       'proimg' => 'https://i.pinimg.com/originals/91/2c/e1/912ce19bfeadb1e9e2b7cee8f0a4f1bc.jpg'  //MAKE THIS THE DEFAULT
     );
   }
