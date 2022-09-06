@@ -1,25 +1,4 @@
 <?php
-/*
-$incUser = $_POST['filtUser'];
-$incTitle = $_POST['filtTitle'];
-$incCaption = $_POST['filtCaption'];
-$incSource = $_POST['filtSource'];
-$search = $_POST['query'];
-
-      UNION
-      SELECT * FROM media 
-      WHERE :incSource AND url LIKE '%:search%'
-      UNION
-      SELECT * FROM media
-      WHERE :incTitle AND title LIKE '%:search%'
-      UNION
-      SELECT * FROM media
-      WHERE :incCaption AND caption LIKE '%:search%'
-
-      $s->bindValue(':incTitle', $incTitle);
-    $s->bindValue(':incSource', $incSource);
-    $s->bindValue(':incCaption', $incCaption);
-*/
 
 function pop_search_result($name, $search, $incUser, $incTitle, $incSource, $incCaption){
   include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/db.inc.php';

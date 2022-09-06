@@ -35,7 +35,7 @@ if($searchLength > 0){
 
   try {
     $sql = "SELECT * FROM media
-      ORDER BY mediaid DESC";
+      ORDER BY date DESC, likes DESC";
     $s = $pdo->prepare($sql);
     $s->execute();
   } catch (PDOException $e) {
