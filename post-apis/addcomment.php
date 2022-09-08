@@ -10,7 +10,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/helpers.inc.php';
 $restJson = file_get_contents("php://input");
 $_POST = json_decode($restJson, true);
 
-if (empty($_POST['name'])) die();
+if (empty($_POST['name']) || empty($_POST['newComment'])) die();
 
 $poster = $_POST['name'];
 $postid = $_POST['postid'];
