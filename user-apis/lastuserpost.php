@@ -32,6 +32,8 @@ catch (PDOException $e)
 $row = $s->fetch(PDO::FETCH_ASSOC);
 
 date_default_timezone_set("America/New_York");
+// change this?
+
 $lastpost = $row['lastpost'];
 
 

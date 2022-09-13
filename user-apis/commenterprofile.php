@@ -9,9 +9,9 @@ include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/helpers.inc.php';
 $restJson = file_get_contents("php://input");
 $_POST = json_decode($restJson, true);
 
-if (empty($_POST['name'])) die();
+if (empty($_POST['commenter'])) die();
 
-$name = $_POST['name'];
+$name = $_POST['commenter'];
 
 try
 {
@@ -27,7 +27,7 @@ try
 }
 catch (PDOException $e)
 {
-  $error = 'Error finding user info';
+  $error = 'Error finding commenter info';
   echo $error;
 }
 
@@ -58,7 +58,7 @@ else {
     $s->bindValue(':name', $name);
     $s->execute();
   } catch (PDOException $e) {
-    echo 'Error finding user info';
+    echo 'Error finding commenter info';
     
   }
 

@@ -9,9 +9,13 @@ include $_SERVER['DOCUMENT_ROOT'] . '/youRLapi/includes/helpers.inc.php';
 $restJson = file_get_contents("php://input");
 $_POST = json_decode($restJson, true);
 
-if (empty($_POST['name'])) die();
+if(!empty($_POST['commenter'])){
+  $name = $_POST['commenter'];
+} else {
+  if (empty($_POST['name'])) die();
+  $name = $_POST['name'];
+}
 
-$name = $_POST['name'];
 $user = $_POST['user'];
 $relationship = $_POST['follows'];
 
